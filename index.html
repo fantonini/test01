@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeu de mémoire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="page__header">
+      <h1>Jeu de mémoire</h1>
+      <p>Retournez les cartes pour trouver les paires.</p>
+    </header>
+
+    <main class="page__content">
+      <section class="panel panel--score">
+        <h2>Scores</h2>
+        <ul id="players" class="players"></ul>
+        <div class="current-player">
+          Joueur courant : <span id="currentPlayer">-</span>
+        </div>
+      </section>
+
+      <section class="panel panel--settings">
+        <h2>Paramètres</h2>
+        <div class="setting">
+          <label for="pairCount">Nombre de paires d'images</label>
+          <input type="number" id="pairCount" min="2" max="12" value="6" />
+        </div>
+        <button id="applySettings" type="button">Appliquer</button>
+      </section>
+
+      <section class="panel panel--game">
+        <h2>Cartes</h2>
+        <div id="game" class="game-grid" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="overlay" class="overlay" aria-modal="true" role="dialog" hidden>
+    <div class="overlay__content">
+      <button class="overlay__close" type="button" aria-label="Fermer">&times;</button>
+      <div class="overlay__body">
+        <div id="overlayVisual" class="overlay__visual"></div>
+        <p id="overlayLabel" class="overlay__label"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
