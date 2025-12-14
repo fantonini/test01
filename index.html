@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion de tours</title>
+    <link rel="stylesheet" href="./src/css/styles.css" />
+  </head>
+  <body>
+    <main class="card" id="app" data-theme="sombre">
+      <header class="header">
+        <div>
+          <h1>Gestion de tours</h1>
+          <p>Logique isolée dans des modules simples pour les futures extensions.</p>
+        </div>
+        <div class="badge">Thème&nbsp;<span id="theme">classique</span></div>
+      </header>
+
+      <section class="status">
+        <div class="tile">
+          <span>Joueur courant</span>
+          <strong id="player">—</strong>
+        </div>
+        <div class="tile">
+          <span>Tour</span>
+          <strong id="turn">1</strong>
+        </div>
+        <div class="tile">
+          <span>Son</span>
+          <strong id="sound">Activé</strong>
+        </div>
+        <div class="tile">
+          <span>Chronomètre</span>
+          <strong id="timer">Off</strong>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="next-turn">Tour suivant</button>
+        <button id="reset" class="secondary">Réinitialiser</button>
+      </div>
+
+      <form id="settings-form">
+        <div class="form-grid">
+          <label>
+            Thème
+            <select name="theme">
+              <option value="classique">Classique</option>
+              <option value="clair">Clair</option>
+            </select>
+          </label>
+          <label>
+            Son
+            <select name="sound">
+              <option value="on">Activé</option>
+              <option value="off">Coupé</option>
+            </select>
+          </label>
+          <label>
+            Chronomètre (secondes)
+            <input name="timer" type="number" placeholder="30" min="0" />
+          </label>
+        </div>
+        <button type="submit">Appliquer les réglages</button>
+      </form>
+    </main>
+
+    <script type="module" src="./src/js/index.js"></script>
+  </body>
+</html>
